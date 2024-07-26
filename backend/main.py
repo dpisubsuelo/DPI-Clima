@@ -10,8 +10,8 @@ app = FastAPI()
 async def crear_planilla(number: dict):
     return conversor(number)
 
-@app.post("/soap/{number}")
-async def crear_planilla(number: str):
-    return conversor(number)
+# @app.post("/soap/{number}")
+# async def crear_planilla(number: str):
+#     return conversor(number)
 
     

@@ -4,17 +4,20 @@ export const objetosApi = createApi({
     reducerPath: "objetosApi",
     baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000/" }),
     endpoints: (builder) => ({
-
         postClima: builder.mutation({
             query: (grados) => ({
-                url: "desdesoap",
+                url: "soap/",
                 method: "POST",
                 body: grados,
             }),
         }),
-
-
-    })
+        GetClima: builder.query({
+            query: (grados) => ({
+                url: `soap/${grados}`,
+                method: "GET",
+            }),
+        }),
+    }),
 });
 
-export const { usePostClimaMutation } = objetosApi;
+export const { usePostClimaMutation, useGetClimaQuery } = objetosApi;

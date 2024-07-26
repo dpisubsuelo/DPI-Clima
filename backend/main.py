@@ -10,6 +10,7 @@ origins = [
     "https://localhost.tiangolo.com",
     "http://localhost",
     "http://localhost:3000",
+    "http://localhost:5173",
 ]
 
 
@@ -25,8 +26,13 @@ app.add_middleware(
 async def crear_planilla(number: dict):
     return conversor(number)
 
-# @app.post("/soap/{number}")
-# async def crear_planilla(number: str):
-#     return conversor(number)
+@app.get("/soap/")
+async def crear_planilla1(number: dict):
+    return conversor(number)
+
+@app.get("/soap/{number}")
+async def crear_planilla2(number: int):
+    print("numero enviado: ",number)
+    return conversor(number)
 
     

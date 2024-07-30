@@ -14,6 +14,7 @@ def conversor(grados):
     </soap:Body>
   </soap:Envelope>
   """ #se debe poner el texto en tres comillas para que no se corte el texto
+  #Recibe el parametro grados y ahi donde esta {grados} es donde soap hace la conversion a Fahrenheit
   options={
       "Content-Type" : "text/xml; charset=utf-8" #tipo de contenido que se va a enviar
       }
